@@ -12,8 +12,10 @@ const history= useHistory();
 const dispatch = useDispatch();
 
 // ---product reducer---
-const products= useSelector((store)=> store.product)
+const products= useSelector((store)=> store.productReducer)
 // ---Categories reducer---
+
+// ---ROUTE---
 
     return(
 <main>
