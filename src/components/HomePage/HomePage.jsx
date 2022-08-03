@@ -12,16 +12,33 @@ const history= useHistory();
 const dispatch = useDispatch();
 
 // ---product reducer---
-const products= useSelector((store)=> store.productReducer)
+const products = useSelector((store)=> store.productReducer)
 // ---Categories reducer---
 
-// ---ROUTE---
+
+// ---DISPATCH---
+
+useEffect(()=> {
+    dispatch({type:'FETCH_PRODUCT'})
+}, []);
+
+
 
     return(
 <main>
-
 <h1>Name of store</h1>
 
+<section>
+        {products.map(products => {
+            return (
+        <div key={products.id} >
+                            <h3>{product.product_name}</h3>
+                            <img src={product.image} alt={product.product_name}/>
+                        </div>
+                    );
+                })}
+            </section>
+    
 </main>
 
     )

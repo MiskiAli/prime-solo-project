@@ -5,7 +5,7 @@ import axios from 'axios';
 // ---GET---
 function* fetchProduct(action){
     try{
-        const response= yield axios.get('/homepage', action.payload); //change route thingy
+        const response= yield axios.get('/api/product', action.payload); 
         yield put({type:'RENDER_PRODUCT', payload: response.data});
     } catch(error){
         console.log('Error with fetchProduct', error);
