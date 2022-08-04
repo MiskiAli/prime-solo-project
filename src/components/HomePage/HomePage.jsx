@@ -14,6 +14,7 @@ const dispatch = useDispatch();
 
 // ---product reducer---
 const products = useSelector((store)=> store.productReducer)
+console.log('is it showing up?', products);
 // ---Categories reducer---
 
 
@@ -29,11 +30,11 @@ useEffect(()=> {
 <main>
 <h1>Name of store</h1>
 
-{/* <section>  
+<section>  
         {products.map(product => {
             return <ProductItem product={product} key={product.id} />
                 })}
-            </section> */}
+            </section>
     
 </main>
 

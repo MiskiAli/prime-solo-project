@@ -7,7 +7,7 @@ function* fetchProduct(){
     try{
         const response= yield axios.get('/api/product'); 
         yield put({
-            type:'RENDER_PRODUCT', 
+            type:'SET_PRODUCT', 
             payload: response.data
         });
     } catch(error){
@@ -25,7 +25,7 @@ function* addProduct(action){
             type:'FETCH_PRODUCT'
         });
     } catch (error){
-        console.log ('Add cake request failed', error);
+        console.log ('Add request failed', error);
     }
 }
 

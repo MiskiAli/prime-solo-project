@@ -3,7 +3,7 @@
 const productDeets =(state=[], action={}) => {
     switch (action.type) {
         case 'PRODUCT_DEETS':
-            return actiion.payload;
+            return action.payload;
             case "UPDATE_PRODUCT_DEETS":
                 return{...state, ...action.payload}
                 default: return state;

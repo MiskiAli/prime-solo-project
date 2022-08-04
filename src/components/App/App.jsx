@@ -22,6 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
 import HomePage from '../HomePage/HomePage';
+import WishlistPage from '../WishlistPage/WishlistPage';
+import AdminPage from '../AdminPage/AdminPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,11 +44,19 @@ function App() {
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
-            // shows AboutPage at all times (logged in or not)
+            // shows homepage at all times (logged in or not)
             exact
             path="/homepage"
           >
             <HomePage />
+          </Route>
+
+          <Route
+            // shows wishlist at all times (logged in or not)
+            exact
+            path="/wishlist"
+          >
+            <WishlistPage />
           </Route>
 
           <Route
@@ -75,6 +85,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/admin"
+          >
+            <AdminPage />
           </ProtectedRoute>
 
           <Route

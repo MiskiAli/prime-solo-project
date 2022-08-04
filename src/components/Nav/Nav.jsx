@@ -11,8 +11,8 @@ function Nav() {
 
   return (
     <div className="nav">
-      <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+      <Link to="/homepage">
+        <h2 className="nav-title">Nasri & Nasib</h2>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
@@ -34,8 +34,16 @@ function Nav() {
               Home Page
             </Link>
 
+            <Link className="navLink" to="/wishlist">
+              Wishlist Page
+            </Link>
+
             <Link className="navLink" to="/info">
               Info Page
+            </Link>
+
+            <Link className="navLink" to="/admin">
+              Admin Page
             </Link>
 
             <LogOutButton className="navLink" />

@@ -13,7 +13,7 @@ function ProductItem({product}){
             <div className="product-card">
                 <img className="product-image" src={product.image} />
             </div>
-            <div className="product-name">{product.name}</div>
+            <h2 className="product-name">{product.product_name}</h2>
             <div className="product-description">${product.price}</div>
             <span className="product-btns">
                 <button className="view-product">View This Item</button>
