@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import ProductItem from '../ProductItem/ProductItem';
 
 
 // This is the homepage, I need to make boilerplate,
@@ -22,22 +23,17 @@ useEffect(()=> {
     dispatch({type:'FETCH_PRODUCT'})
 }, []);
 
-
+// .map is not working idk why?????
 
     return(
 <main>
 <h1>Name of store</h1>
 
-<section>
-        {products.map(products => {
-            return (
-        <div key={products.id} >
-                            <h3>{product.product_name}</h3>
-                            <img src={product.image} alt={product.product_name}/>
-                        </div>
-                    );
+{/* <section>  
+        {products.map(product => {
+            return <ProductItem product={product} key={product.id} />
                 })}
-            </section>
+            </section> */}
     
 </main>
 
