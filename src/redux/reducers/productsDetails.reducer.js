@@ -2,7 +2,7 @@
 
 const productDeets =(state=[], action={}) => {
     switch (action.type) {
-        case 'PRODUCT_DEETS':
+        case 'SET_PRODUCT_DEETS':
             return action.payload;
             case "UPDATE_PRODUCT_DEETS":
                 return{...state, ...action.payload}

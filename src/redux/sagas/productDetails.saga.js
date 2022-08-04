@@ -3,11 +3,11 @@ import axios from 'axios';
 
 function* fetchAllProductDetails(){
     try{
-        const response = yield axios.get(`/api/product${action.payload}`)
+        const res = yield axios.get(`/api/product${action.payload}`)
         console.log('get product details', response.data);
         yield put({
-            type: 'PRODUCT_DEETS',
-            payload: response.data,
+            type: 'SET_PRODUCT_DEETS',
+            payload: res.data,
         })
     } catch (error){
         console.log('get details error', error);

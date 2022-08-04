@@ -24,6 +24,7 @@ import './App.css';
 import HomePage from '../HomePage/HomePage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import AdminPage from '../AdminPage/AdminPage';
+import ProductDetails from '../ProductDetails/ProductDetails';
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,14 @@ function App() {
             path="/homepage"
           >
             <HomePage />
+          </Route>
+
+          <Route
+            // shows details at all times (logged in or not)
+            exact
+            path="/details"
+          >
+            <ProductDetails />
           </Route>
 
           <Route
