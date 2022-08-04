@@ -5,6 +5,7 @@ import {useSelector} from 'react-redux';
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
 
@@ -17,6 +18,7 @@ function LoginForm() {
         payload: {
           username: username,
           password: password,
+          email: email,
         },
       });
     } else {
@@ -41,6 +43,18 @@ function LoginForm() {
             required
             value={username}
             onChange={(event) => setUsername(event.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="email">
+        Email:
+          <input
+            type="text"
+            name="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           />
         </label>
       </div>
