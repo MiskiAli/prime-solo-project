@@ -14,6 +14,7 @@ const dispatch = useDispatch();
 
 // ---product reducer---
 const products = useSelector((store)=> store.productReducer)
+console.log('is it showing up?', products);
 // ---Categories reducer---
 
 
@@ -23,17 +24,29 @@ useEffect(()=> {
     dispatch({type:'FETCH_PRODUCT'})
 }, []);
 
-// .map is not working idk why?????
+//handle submit goes to details page
+// const handleSubmit = (id) => {
+// console.log('the product has been clicked',id);
+//     const details = id
+//     dispatch({
+//         type:'FETCH_PRODUCT_DEETS',
+//         payload: details,
+    
+//     })
+// }
+
+
 
     return(
 <main>
 <h1>Name of store</h1>
 
-{/* <section>  
+<section>  
         {products.map(product => {
             return <ProductItem product={product} key={product.id} />
                 })}
-            </section> */}
+                
+            </section>
     
 </main>
 
