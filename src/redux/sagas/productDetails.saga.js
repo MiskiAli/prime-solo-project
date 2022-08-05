@@ -16,7 +16,6 @@ import axios from 'axios';
 // 
 
 function* fetchAllProductDetails(action) {
-    console.log('in the fetchAllProductDetails does it work?');
 	const id = action.payload;
 	try {
 		//? Request the details from the server by ID
