@@ -19,11 +19,18 @@ router.get('/', (req, res) => {
 
 // ---get details---
 // set up router 
-router.get('/:id', (req, res) => {
+router.get('/details/:id', (req, res) => {
     console.log('geting the specified product i clicked on');
     const queryText = `SELECT * FROM product WHERE product.id = $1;`;
-    const sqlParams = [req.params.id];
 
+    // `SELECT product.id, product_name, image, product_discription, array_agg(categories.product_name) 
+    // FROM product JOIN
+    // categories ON categories.id = categories_id
+	// WHERE product.id = $1
+	// GROUP BY product.id;`;
+
+    const sqlParams = [req.params.id];
+    console.log('router working?',req.params.id);
     pool.query(queryText, sqlParams)
     .then((result) => {
         console.log('result: ', result.rows[0]);

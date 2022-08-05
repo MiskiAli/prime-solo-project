@@ -17,7 +17,7 @@ function* fetchProduct(){
 
 // ---POST---
 function* addProduct(action){
-    console.log('In addCake saga');
+    console.log('In add product to saga');
     try{
         yield axios.post('/api/product', action.payload)
         console.log('Add product in action.payload', action.payload);
