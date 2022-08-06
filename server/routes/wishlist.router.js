@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/wishlist/:id', (req, res) => {
     console.log('/wishlist GET route');
     // Sql query, join tables and select columns do display
-    // product_id, product_name, price
+    // product_id, product_name, price and image
     const queryText = `SELECT product.id, product_name, price, image
 	FROM product 
 	JOIN wishlist
@@ -16,12 +16,14 @@ router.get('/wishlist/:id', (req, res) => {
         .then((result) => {
             res.send(result.rows)
         })
-        .catch((err) => {
-            console.log('GET wishlist error', err);
+        .catch((error) => {
+            console.log('GET wishlist error', error);
         })
 })
 
 // ---post request---
+
+
 
 
 

@@ -25,9 +25,9 @@ function WishlistPage(){
             <h3>{}</h3>
 <section>
 
-            {/* {wishlist.map((wishlistItems)=>{
-                return <WishlistItem key={wishlistItems.id} wishlistItem={wishlistItems} />
-            })} */}
+            {wishlist.map((wishlistItems)=>{
+                return <WishlistItem key={wishlistItems.id} wishlistItems={wishlistItems} />
+            })}
 </section>
 
             <Link to="/homepage">
