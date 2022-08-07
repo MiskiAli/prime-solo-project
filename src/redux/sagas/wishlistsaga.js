@@ -17,7 +17,26 @@ function* addToWishlist(action) {
 	}
 }
 
+// post into db 
+function* wishlistPost(action){
+    yield axios({
+        method: "POST", 
+        url:`/api/wishlist`, 
+        data: action.payload
+    })
 
+}
+
+// delete from db 
+ function* deleteWishlist(action){
+    try{
+        yield axios.delete(`/api/wishlist/${action.payload}`);
+    } catch{
+        console.log('delete from db ', action.payload)
+
+    }
+    yield put({type:"ADD_WISHLIST_ITEMS"});
+ }
 
 
 //     console.log('ADD_TO_WISHLIST ', action.payload);
@@ -35,13 +54,7 @@ function* addToWishlist(action) {
 //     }
 // }
 
-function* wishlistPost(action){
-yield axios({
-    method: "POST", 
-    url:`/api/wishlist`, 
-    data: action.payload
-})
-}
+
     
     //     try {
     //         yield axios.post('/api/wishlist', action.payload)
@@ -79,6 +92,7 @@ yield axios({
 function* wishlistSaga() {
     yield takeLatest('ADD_WISHLIST_ITEMS', addToWishlist);
     yield takeLatest('ADD_WISHLIST_POST', wishlistPost);
+    yield takeLatest('DELETE_WISHLIST', deleteWishlist);
 
 }
 
