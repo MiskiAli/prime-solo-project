@@ -2,16 +2,17 @@ import axios from 'axios';
 import { post, put, takeLatest } from 'redux-saga/effects';
 
 // Saga will listen for 'ADD_WISHLIST_ITEMS' dispatch 
-function* addToWishlist(action) {
+function* fetchWishList() {
     // const id = action.payload;
 	try {
 		//? Request the details from the server by ID
-		const res = yield axios.get(`/api/wishlist`);
-		yield console.log('res OF RETURN', res);
+		const response = yield axios.get(`/api/wishlist`);
+
+		console.log('res OF RETURN', response.data);
 		//? After details come back send them to the reducer to update state
 		yield put({ 
             type: 'SET_WISHLIST', 
-            payload: res.data });
+            payload: response.data });
 	} catch (error) {
 		console.log('get wishlist error', error);
 	}
@@ -35,12 +36,12 @@ function* deleteWishlist(action){
         console.log('delete from db ', action.payload)
 
     }
-    yield put({type:"ADD_WISHLIST_ITEMS"});
+    yield put({type:"FETCH_WISHLIST_ITEMS"});
 }
 
 
 function* wishlistSaga() {
-    yield takeLatest('ADD_WISHLIST_ITEMS', addToWishlist);
+    yield takeLatest('FETCH_WISHLIST_ITEMS', fetchWishList);
     yield takeLatest('ADD_WISHLIST_POST', wishlistPost);
     yield takeLatest('DELETE_WISHLIST', deleteWishlist);
 

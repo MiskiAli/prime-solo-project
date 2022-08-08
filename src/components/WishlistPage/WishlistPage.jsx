@@ -7,14 +7,13 @@ import WishlistItem from '../WishlistItem/WishlistItem';
 function WishlistPage(){
     const history= useHistory();
     const dispatch = useDispatch();
-    const params = useParams();
+    // const params = useParams();
     const wishlist = useSelector((store)=> store.wishlistReducer); //add this reducer and saga!
     console.log('what is in the wishlist reducer', wishlist);
 
     useEffect(()=> {
         dispatch({
-            type:"ADD_WISHLIST_ITEMS",
-            payload: params.id,
+            type: "FETCH_WISHLIST_ITEMS",
     })
     }, []);
 
@@ -34,10 +33,11 @@ function WishlistPage(){
             <h1>wishlist page!!</h1>
 
 <section>
-
+<div>
             {wishlist.map((wishlistItems)=>{
                 return <WishlistItem key={wishlistItems.id} wishlistItems={wishlistItems} />
             })}
+            </div>
 </section>
             <Link to="/homepage">
             <button>keep Shopping</button> 

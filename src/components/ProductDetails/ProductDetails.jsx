@@ -20,7 +20,7 @@ useEffect(()=>{
         payload: (params.id),
 
     })
-    dispatch({type:"ADD_WISHLIST_ITEMS"})
+    // dispatch({type:"FETCH_WISHLIST_ITEMS"})
 },[params.id])
 
 
