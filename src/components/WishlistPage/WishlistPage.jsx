@@ -15,7 +15,7 @@ function WishlistPage(){
     //     dispatch({
     //         type:'ADD_WISHLIST_ITEMS',
     //         payload: (params.id)
-          
+
     //     })
     //     console.log('whats wRONG>>>>>', wishlist);
     // },
@@ -25,19 +25,16 @@ function WishlistPage(){
     return(
         <div>
             <h1>wishlist page!!</h1>
-            <h3>{}</h3>
+
 <section>
 
             {wishlist.map((wishlistItems)=>{
                 return <WishlistItem key={wishlistItems.id} wishlistItems={wishlistItems} />
             })}
 </section>
-
             <Link to="/homepage">
             <button>keep Shopping</button> 
             </Link>
-
-            {/* make sure to add funtion */}
         </div>
     )
 };

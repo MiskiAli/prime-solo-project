@@ -28,7 +28,7 @@ function* wishlistPost(action){
 }
 
 // delete from db 
- function* deleteWishlist(action){
+function* deleteWishlist(action){
     try{
         yield axios.delete(`/api/wishlist/${action.payload}`);
     } catch{
@@ -36,7 +36,7 @@ function* wishlistPost(action){
 
     }
     yield put({type:"ADD_WISHLIST_ITEMS"});
- }
+}
 
 
 //     console.log('ADD_TO_WISHLIST ', action.payload);
@@ -55,20 +55,20 @@ function* wishlistPost(action){
 // }
 
 
-    
-    //     try {
-    //         yield axios.post('/api/wishlist', action.payload)
-    //         console.log('Add dress action.payload', action.payload);
-    //         // Fetch all cakes after adding new cake
-    //         yield put({
-    //             type: 'ADD_WISHLIST_ITEMS'
-    //         })
-    //     }
-    //     catch (error) {
-    //         console.log('Add to wishlist request failed', error);
-    //     }
-    // }
-    
+
+//     try {
+//         yield axios.post('/api/wishlist', action.payload)
+//         console.log('Add dress action.payload', action.payload);
+//         // Fetch all cakes after adding new cake
+//         yield put({
+//             type: 'ADD_WISHLIST_ITEMS'
+//         })
+//     }
+//     catch (error) {
+//         console.log('Add to wishlist request failed', error);
+//     }
+// }
+
 
 
 
@@ -88,6 +88,7 @@ function* wishlistPost(action){
 // 		console.log('get details error', error);
 // 	}
 // }
+
 
 function* wishlistSaga() {
     yield takeLatest('ADD_WISHLIST_ITEMS', addToWishlist);
