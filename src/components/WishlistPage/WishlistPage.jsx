@@ -7,9 +7,10 @@ import WishlistItem from '../WishlistItem/WishlistItem';
 function WishlistPage(){
     const history= useHistory();
     const dispatch = useDispatch();
-    // const params = useParams();
+    const params = useParams();
     const wishlist = useSelector((store)=> store.wishlistReducer); //add this reducer and saga!
     console.log('what is in the wishlist reducer', wishlist);
+
 
     // useEffect(()=> {
     //     dispatch({
@@ -19,7 +20,7 @@ function WishlistPage(){
     //     })
     //     console.log('whats wRONG>>>>>', wishlist);
     // },
-    //  [params.id]);
+    // [params.id]);
 
 
     return(

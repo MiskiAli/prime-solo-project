@@ -41,7 +41,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log('POST request');
     let sqlQuery = `INSERT INTO wishlist (user_id, product_id) VALUES ($1, $2)`;
-    const sqlValue = [req.user.id, req.body.product_id];
+    const sqlValue = [req.user.id, req.body.id];
+    console.log('why is it not working?',req.body);
     pool
     .query(sqlQuery, sqlValue)
     .then((result)=>{
