@@ -47,5 +47,26 @@ router.get('/details/:id', (req, res) => {
 
 })
 
+// Delete products from database admin side
+
+router.delete("/:id", (req, res)=>{
+    const id = req.params.id;
+    console.log('delete from db', id);
+    let sqlQuery = `
+    DELETE FROM "product"
+    WHERE "id" = $1;
+    `;
+    const sqlParams=[id];
+    pool
+    .query(sqlQuery, sqlParams)
+    .then((result)=>{
+        res.sendStatus(200);
+    })
+    .catch((error)=>{
+        console.log('error in product router DELETE', error);
+        res.sendStatus(500);
+    });
+    })
+
 
 module.exports = router;

@@ -11,16 +11,22 @@ function WishlistPage(){
     const wishlist = useSelector((store)=> store.wishlistReducer); //add this reducer and saga!
     console.log('what is in the wishlist reducer', wishlist);
 
+    useEffect(()=> {
+        dispatch({
+            type:"ADD_WISHLIST_ITEMS",
+            payload: params.id,
+    })
+    }, []);
 
     // useEffect(()=> {
     //     dispatch({
     //         type:'ADD_WISHLIST_ITEMS',
-    //         payload: (params.id)
+    //         payload: params.id
 
     //     })
     //     console.log('whats wRONG>>>>>', wishlist);
     // },
-    // [params.id]);
+    // []);
 
 
     return(

@@ -3,13 +3,13 @@ import { post, put, takeLatest } from 'redux-saga/effects';
 
 
 // GETs the wishlist info on to the admin page.
-function* fetchWishlist() {
-    console.log('in fetchWishlist function admin saga');
+function* fetchProduct() {
+    console.log('in fetchProduct function admin saga');
     try {
-        const res = yield axios.get('/api/wishlist')
+        const res = yield axios.get('/api/product')
         console.log('Get all wishlist', res.data);
         yield put({
-            type: 'SET_WISHLIST', //type is from wishlist reducer
+            type: 'SET_PRODUCT', //type is from product reducer
             payload: res.data
         })
     }
@@ -26,27 +26,30 @@ function* fetchWishlist() {
 //         yield axios.delete(`/api/product/${action.payload}`);
 //         console.log('Delete product', action.payload);
     
-//         yield put({ type: 'SET_PRODUCT', payload: res.data }); // type is from product reducer
+//         yield put({ type: 'SET_PRODUCT', payload: res.data }); 
+//         // type is from product reducer
 //     }
 //         catch (error) {
 //             console.log('Error deleting product', error);
 //         }
 //     };
 
-    // function* deleteProduct(action){
-    //     try{
-    //         yield axios.delete(`/api/product/${action.payload}`);
-    //     } catch{
-    //         console.log('delete from db ', action.payload)
+    function* deleteProduct(action){
+        const id = action.payload;
+        try{
+            yield axios.delete(`/api/product/${id}`);
+        } catch{
+            console.log('delete from db ', id)
     
-    //     }
-    //     yield put({type:"SET_PRODUCT"});
-    // }
+        }
+        yield put({type:"FETCH_PRODUCT_ADMIN"});
+    }
 
 
 function* adminSaga(){
-    yield takeLatest('FETCH_WISHLIST', fetchWishlist);
-    // yield takeLatest('DELETE_PRODUCT', deleteProduct);
+
+    yield takeLatest('FETCH_PRODUCT_ADMIN', fetchProduct);
+    yield takeLatest('DELETE_PRODUCT', deleteProduct);
 
 }
 

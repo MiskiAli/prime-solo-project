@@ -4,10 +4,14 @@ import { useDispatch } from "react-redux";
 
 
 function AdminProductItem({product}){
-// const dispatch = useDispatch();
+const dispatch = useDispatch();
 
 const deleteInventory= () =>{
 // add deleteInventory functionality
+dispatch({
+    type:"DELETE_PRODUCT",
+    payload: product.id,
+})
 }
 
 

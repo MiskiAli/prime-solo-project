@@ -5,12 +5,16 @@ import { Link, useHistory } from 'react-router-dom';
 function WishlistItem({wishlistItems}){
     const dispatch= useDispatch();
 
+
+
 const handleDelete=()=>{
 dispatch({
     type:"DELETE_WISHLIST", 
     payload: wishlistItems.id,
 })
 }
+
+
 
     return(
         <div>
