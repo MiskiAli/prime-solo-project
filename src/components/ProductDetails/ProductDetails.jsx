@@ -9,7 +9,7 @@ function ProductDetails(){
 const dispatch = useDispatch();
 // to get the id of a specific product
 const params = useParams();
-console.log('what is parms',params.id);
+// console.log('what is parms',params.id);
 // ---useSelector---
 const productDetails = useSelector((store)=> store.productDeets);
 console.log('what is in this reducer?', productDetails)
@@ -20,6 +20,7 @@ useEffect(()=>{
         payload: (params.id),
 
     })
+    // dispatch({type:"FETCH_WISHLIST_ITEMS"})
 },[params.id])
 
 
@@ -27,7 +28,7 @@ useEffect(()=>{
 const addToWishlist = ()=> {
 // set the type its suposed to go to
 dispatch({ 
-    type: 'ADD_TO_WISHLIST',
+    type: 'ADD_WISHLIST_POST',
     payload:
     {
         id: productDetails.id,

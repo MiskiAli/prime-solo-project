@@ -1,20 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
-// function* fetchAllProductDetails(action){
-//     console.log('in the fetchAllProductDetails does it work?');
-//     try{
-//         const response = yield axios.get(`/api/product${action.payload}`)
-//         console.log('get product details', response.data);
-//         yield put({
-//             type: 'SET_PRODUCT_DEETS',
-//             payload: response.data,
-//         })
-//     } catch (error){
-//         console.log('get details error', error);
-//     }
-// 
-
 function* fetchAllProductDetails(action) {
 	const id = action.payload;
 	try {
