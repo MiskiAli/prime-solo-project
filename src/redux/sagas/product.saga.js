@@ -16,7 +16,7 @@ function* fetchProduct(){
 };
 
 // ---POST---
-// use later for admin side
+// 
 function* addProduct(action){
     console.log('In add product to saga');
     try{

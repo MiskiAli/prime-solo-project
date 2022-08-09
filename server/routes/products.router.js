@@ -2,7 +2,8 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-// ---router get---
+// ---GET---
+// shows everything from db to homepage
 router.get('/', (req, res) => {
 
     const queryText = `SELECT * FROM "product"`;
@@ -18,8 +19,8 @@ router.get('/', (req, res) => {
 });
 
 
-// ---get details---
-// set up router 
+// ---GET details---
+// shows specified product in details page
 router.get('/details/:id', (req, res) => {
     console.log('geting the specified product i clicked on');
     const queryText = `SELECT * FROM product WHERE product.id = $1;`;
@@ -41,8 +42,8 @@ router.get('/details/:id', (req, res) => {
 
 })
 
-
-// Delete products from database admin side
+// ---Delete---
+// Delete products from homepage and  database on the admin side
 router.delete("/:id", (req, res)=>{
     const id = req.params.id;
     console.log('delete from db', id);
@@ -61,6 +62,42 @@ router.delete("/:id", (req, res)=>{
         res.sendStatus(500);
     });
     })
+
+// ---PUT---
+// edit product in admin view, changes should show on the Homepage.
+router.put('/:id', (req, res)=>{
+    const sqlText = `UPDATE product SET product_name = $1, 
+    product_discription = $2, price = $3 WHERE id = $4;`;
+    console.log('req.body and req.params:', req.body, req.params);
+    pool.
+    query(sqlText, [req.body.product_name, req.body.product_discription, req.body.price, req.params.id])
+    .then((result)=>{
+        console.log('PUT works!!', result);
+        res.sendStatus(201)
+    })
+    .catch((error)=>{
+        console.log('PUT is not working FAIL!', error);
+    })
+})
+
+
+// ---POST----
+// should post new product in the admin view and show on the homepage .. not might use
+router.post('/', (req, res)=>{
+    console.log('POST in product.router (ADD_PRODUCT data)', req.body);
+    const newProduct = [req.body.product_name, req.body.product_discription, req.body.price, req.body.image, req.body.categories_id];
+    const sqlText = `INSERT INTO product 
+    (product_name, product_discription, price, image, categories_id) 
+    VALUES ($1, $2, $3, $4, $5);`;
+    pool.
+    query(newProduct, sqlText)
+    .then((result)=>{
+        console.log('product router post for ADD_PRODUCT is working!', result);
+    })
+    .catch((error)=>{
+        console.log('post in product router is not working FAILED', error);
+    })
+})
 
 
 module.exports = router;

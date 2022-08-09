@@ -25,6 +25,7 @@ import HomePage from '../HomePage/HomePage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import AdminPage from '../AdminPage/AdminPage';
 import ProductDetails from '../ProductDetails/ProductDetails';
+import EditProduct from '../EditProduct/EditProduct';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,13 @@ function App() {
           >
             <HomePage />
           </Route>
+
+        <Route
+        exact
+        path="/edit"
+        >
+          <EditProduct />
+        </Route>
 
           <Route
             // shows details at all times (logged in or not)
