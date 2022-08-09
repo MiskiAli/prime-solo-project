@@ -11,6 +11,8 @@ const wishlist = useSelector((store)=> store.wishlistReducer);
 const products = useSelector((store)=> store.productReducer)// fix this!!
 const dispatch = useDispatch();
 
+console.log('admin page `products`', products)
+
 useEffect(()=> {
     dispatch({
         type: 'FETCH_PRODUCT'

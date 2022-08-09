@@ -8,7 +8,7 @@ const dispatch = useDispatch();
 
 // ---product reducer---
 const products = useSelector((store)=> store.productReducer)
-
+console.log('adminProducts `products`', products)
 
 return(
     // map thru products
