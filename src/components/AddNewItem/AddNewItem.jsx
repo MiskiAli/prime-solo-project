@@ -3,12 +3,13 @@ import { useDispatch } from "react-redux";
 
 function AddNewItem(){
 const dispatch = useDispatch();
+
 // use states for the store
 const [productName, setProductName] = useState();
 const [productDiscription, setProductDiscription] = useState();
 const [productPrice, setProductPrice] = useState();
 const [productImage, setProductImage] = useState();
-// const [prodcutCategory, setProdcutCategory] = useState(); might use later.
+const [productCategory, setProductCategory] = useState(); //might use later.
 
 // this function is for the add product btn
 const handleAddProduct= (event)=>{
@@ -19,22 +20,24 @@ dispatch({
         product_name: productName,
         product_discription: productDiscription,
         image: productImage,
-        price:productPrice, 
+        price:productPrice,
+        category: productCategory
     },
 });
-
 // to clear inputs after add product btn clicked
 setProductName('');
 setProductDiscription('');
 setProductPrice('');
 setProductImage('');
+setProductCategory
 }
 
 const autoUpdate =()=>{
     setProductName("All Black Abaya");
     setProductDiscription("long all black abaya set (small)");
-    // setProductImage
-    setProductPrice('60');
+    // setProductImage --> fix later!
+    setProductPrice(60);
+    setProductCategory(1);
 }
 
 
@@ -45,18 +48,21 @@ const autoUpdate =()=>{
 <h3 onClick={autoUpdate}>Add Product</h3>
 </div>
 
-<form onClick={handleAddProduct}>
-    {/* <lable>Name</lable> */}
+<form >
+    <label>Name</label>
     <input onChange={(event) => setProductName(event.target.value)} value={productName}/>
 
-    {/* <lable>description</lable> */}
+    <label>description</label>
     <textarea onChange={(event) => setProductDiscription(event.target.value)} value={productDiscription}/>
 
-    {/* <lable>image</lable> */}
+    <label>image</label>
     <input onChange={(event) => setProductImage(event.target.value)} value={productImage}/>
 
-    {/* <lable>price</lable> */}
+    <label>price</label>
     <input onChange={(event) => setProductPrice(event.target.value)} value={productPrice}/>
+    <label>category</label>
+    <input onChange={(event) => setProductCategory(event.target.value)} value={productCategory}/>
+<button onClick={handleAddProduct}>Add New Button</button>
 
 </form>
 

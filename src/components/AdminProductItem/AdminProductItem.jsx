@@ -24,7 +24,7 @@ dispatch({
             <h2 className="product-name">{product.product_name}</h2>
             <div className="product-price">${product.price}</div>
             <span className="product-btns">
-                <button onClick={deleteInventory} className="delete-inventory">delete This Item</button>
+                <button onClick={deleteInventory} className="delete-inventory">Delete This Item</button>
                 
             </span>
         </section>
