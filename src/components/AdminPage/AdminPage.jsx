@@ -26,7 +26,7 @@ useEffect(()=> {
     return(
     <>
     <h1>Admin</h1>
-<AddNewItem />
+{/* <AddNewItem /> */}
 <AdminProductlist />
     </>
     )

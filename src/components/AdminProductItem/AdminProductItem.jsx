@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux"; 
+import { useDispatch,} from "react-redux"; 
+import { useHistory } from "react-router-dom";
+
 
 
 function AdminProductItem({product}){
 const dispatch = useDispatch();
-
+const history = useHistory();
 const deleteInventory= () =>{
 // add deleteInventory functionality
 dispatch({
@@ -14,6 +16,9 @@ dispatch({
 })
 }
 
+const editInventory= ()=>{
+    history.push('/edit')
+}
 
     return(
 <div>
@@ -25,6 +30,7 @@ dispatch({
             <div className="product-price">${product.price}</div>
             <span className="product-btns">
                 <button onClick={deleteInventory} className="delete-inventory">Delete This Item</button>
+                <button onClick={editInventory} className="edit-inventory">Edit This Item</button>
                 
             </span>
         </section>

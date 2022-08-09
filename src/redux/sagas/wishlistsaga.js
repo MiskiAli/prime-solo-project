@@ -25,7 +25,7 @@ function* wishlistPost(action){
         url:`/api/wishlist`, 
         data: action.payload
     })
-
+yield put({ type:'FETCH_WISHLIST_ITEMS'})
 }
 
 // delete from db 

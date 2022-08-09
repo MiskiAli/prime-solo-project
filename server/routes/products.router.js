@@ -68,6 +68,7 @@ router.delete("/:id", (req, res)=>{
 router.put('/:id', (req, res)=>{
     const sqlText = `UPDATE product SET product_name = $1, 
     product_discription = $2, price = $3 WHERE id = $4;`;
+    console.log('req.body and req.params:', req.body, req.params);
     pool.
     query(sqlText, [req.body.product_name, req.body.product_discription, req.body.price, req.params.id])
     .then((result)=>{
@@ -81,7 +82,7 @@ router.put('/:id', (req, res)=>{
 
 
 // ---POST----
-// should post new product in the admin view and show on the homepage
+// should post new product in the admin view and show on the homepage .. not might use
 router.post('/', (req, res)=>{
     console.log('POST in product.router (ADD_PRODUCT data)', req.body);
     const newProduct = [req.body.product_name, req.body.product_discription, req.body.price, req.body.image, req.body.categories_id];
