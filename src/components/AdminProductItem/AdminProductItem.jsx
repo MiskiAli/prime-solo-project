@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch,} from "react-redux"; 
 import { useHistory } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 
@@ -13,11 +14,29 @@ const history = useHistory();
 
 const deleteInventory= () =>{
 // add deleteInventory functionality
-
-dispatch({
-    type:"DELETE_PRODUCT",
-    payload: product.id,
+Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+    if (result.isConfirmed) {
+        dispatch({
+            type:"DELETE_PRODUCT",
+            payload: product.id,
+        })
+    Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+    )
+    }
 })
+
+
 }
 
 const editInventory= () =>{

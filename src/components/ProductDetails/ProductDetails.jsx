@@ -3,9 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import ProductDetailsItem from '../ProductDetailsItem/ProductDetailsItem';
 
+// styling imports
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import AddIcon from '@mui/icons-material/Add';
+import Swal from 'sweetalert2'
+
 
 function ProductDetails(){
-// const history = useHistory();
+const history = useHistory();
 const dispatch = useDispatch();
 // to get the id of a specific product
 const params = useParams();
@@ -37,10 +42,23 @@ dispatch({
         image: productDetails.image,
         description: productDetails.product_discription,
     },
+    });
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Saved to your wishlist',
+    showConfirmButton: false,
+    timer: 1500
+});
+    history.push('/wishlist');
 
-    })
 }
-
+// const backHome = () =>{
+//     history.push('/homepage');
+// }
+const backHome = ()=>{
+    history.push('/homepage')
+}
 
 return(
 <>
@@ -55,12 +73,8 @@ return(
             <p className="product-description">{productDetails.product_discription}</p>
             <h3 className="product-price">${productDetails.price}</h3>
             </section>
-            <Link to={'/homepage'}>
-            <button  >Continue Shopping</button>
-            </Link>
-            <Link to={'/wishlist'}>
-            <button onClick={addToWishlist} className="add-to-wishlist" >add to wishlist</button>
-            </Link>
+            <button onClick={backHome}className="back-to-home"> <ArrowBackIosNewIcon/> Continue Shopping</button>
+            <button onClick={addToWishlist} className="add-to-wishlist" > <AddIcon/> add to wishlist</button>
 </>
 )
 

@@ -4,6 +4,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 // ---imports---
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 function Nav() {
@@ -26,16 +28,14 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            <Link className="navLink" to="/user">
-              profile page
-            </Link>
+            
 
             <Link className="navLink" to="/homepage">
-              Home Page
+            <HomeIcon />
             </Link>
 
             <Link className="navLink" to="/wishlist">
-              Wishlist Page
+            <FavoriteIcon />
             </Link>
 
             <Link className="navLink" to="/info">
@@ -45,7 +45,10 @@ function Nav() {
             <Link className="navLink" to="/admin">
               Admin Page
             </Link>
-
+            
+            <Link className="navLink" to="/user">
+              profile page
+            </Link>
             <LogOutButton className="navLink" />
           </>
         )}

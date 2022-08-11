@@ -5,6 +5,7 @@ import AddNewItem from '../AddNewItem/AddNewItem';
 import AdminProductlist from '../AdminProductList/AdminProductList';
 
 
+
 function AdminPage(){
 
 const wishlist = useSelector((store)=> store.wishlistReducer); 
@@ -29,7 +30,9 @@ useEffect(()=> {
     <>
     <h1>Admin</h1>
 {/* <AddNewItem /> */}
+
 <AdminProductlist />
+
     </>
     )
 }
