@@ -1,7 +1,19 @@
+.product-name{
+color: #443a6b;  
 
+
+}
+.product-card:hover {
+    /* background:#ece6ff; */
+    background-image: linear-gradient(144deg, #e9d0fa, #c8c0f8 50% ,#e9feff);
+    cursor: pointer;
+}
+
+.product-price{
+    color: #443a6b;
+}
 
 .product-image{
-   
     display: flex;
     /* border-radius: 10px; */
     width: 300px;
@@ -12,7 +24,9 @@
     display: flex;
 }
 
-h2 {
+
+
+/* h2 {
     text-decoration: none;
     color: red;
-}
+} */

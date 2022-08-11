@@ -24,10 +24,10 @@ function ProductItem({product}){
     return(
         <div >
         <section className="product-item" >
-            <Link to= {`/details/${product.id}`}>
+            <Link classname="product-link" to= {`/details/${product.id}`}>
             <div className="product-card">
                 <img className="product-image" src={product.image} />
-            <h2 className="product-name">{product.product_name}</h2>
+            <h5 className="product-name">{product.product_name}</h5>
             <div className="product-price">${product.price}</div>
             <span className="product-btns">
                 {/* <button className="view-product">View This Item</button> */}

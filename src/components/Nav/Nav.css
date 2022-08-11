@@ -5,7 +5,7 @@
   align-items: center;
 
   margin: 0 0 30px;
-  background-color: #eb89e5;
+  background-color: #622a5e;
   overflow: hidden;
 }
 
@@ -14,9 +14,10 @@
 }
 
 .nav-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: #f2f2f2;
+  text-align: center;
   padding-left: 10px;
   margin: 0;
 }
@@ -24,7 +25,7 @@
 .navLink {
   display: inline-block;
   color: #f2f2f2;
-  background-color: #eb89e5;
+  background-color: #622a5e;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -38,5 +39,7 @@
 }
 
 .navLink:hover {
-  background-color: #eb89e5;
+  background-image: linear-gradient(144deg, #bf83e8, #7b74a5 50% ,#7ca4a6);
+
 }
+

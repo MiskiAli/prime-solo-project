@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { useDispatch,} from "react-redux"; 
 import { useHistory } from "react-router-dom";
 import Swal from 'sweetalert2'
+import {  useSelector } from 'react-redux';
 
 
 
 function AdminProductItem({product}){
     // const products = useSelector((store)=> store.productReducer)
+    const user = useSelector((store)=> store.user);
 
 const dispatch = useDispatch();
 const history = useHistory();
@@ -52,6 +54,8 @@ const editInventory= () =>{
 
     return(
 <div>
+{user.admin && user.id ===1 && 
+
 <section className="product-item" >
             <div className="product-card">
                 <img className="product-image" src={product.image} />
@@ -66,8 +70,11 @@ const editInventory= () =>{
                 
             </span>
         </section>
-
+}
 </div>
+
+        
     )
+        
 }
 export default AdminProductItem;

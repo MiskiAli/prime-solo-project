@@ -20,19 +20,6 @@ useEffect(()=> {
     dispatch({type:'FETCH_PRODUCT'})
 }, []);
 
-//handle submit goes to details page
-// const handleSubmit = (id) => {
-// console.log('the product has been clicked',id);
-//     const details = id
-//     dispatch({
-//         type:'FETCH_PRODUCT_DEETS',
-//         payload: details,
-    
-//     })
-// }
-
-
-
     return(
 <main>
 

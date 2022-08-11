@@ -14,8 +14,9 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/homepage">
-        <h2 className="nav-title">Nasri & Nasib</h2>
+        <h1 className="nav-title">Nasri & Nasib</h1>
       </Link>
+      
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -23,29 +24,34 @@ function Nav() {
           <Link className="navLink" to="/login">
             Login / Register
           </Link>
+          
+          
         )}
-
-        {/* If a user is logged in, show these links */}
-        {user.id && (
-          <>
-            
-
-            <Link className="navLink" to="/homepage">
+        <Link className="navLink" to="/homepage">
             <HomeIcon />
             </Link>
+       
+
+        {/* If a user is logged in, show these links */}
+       
+        {/* {!user.admin && user.id === 1 && (
+            <Link className="navLink" to="/admin">
+              Admin Page
+            </Link>
+            )} */}
+        {user.id && (
+          <>
 
             <Link className="navLink" to="/wishlist">
             <FavoriteIcon />
             </Link>
-
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-
             <Link className="navLink" to="/admin">
               Admin Page
             </Link>
-            
+            <Link className="navLink" to="/info">
+              Info Page
+            </Link>
+           
             <Link className="navLink" to="/user">
               profile page
             </Link>
@@ -56,6 +62,7 @@ function Nav() {
         <Link className="navLink" to="/about">
           About
         </Link>
+       
       </div>
     </div>
   );

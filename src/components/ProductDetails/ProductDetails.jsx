@@ -42,19 +42,24 @@ dispatch({
         image: productDetails.image,
         description: productDetails.product_discription,
     },
+
     });
-    Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Saved to your wishlist',
-    showConfirmButton: false,
-    timer: 1500
-});
+//     Swal.fire({
+//     position: 'top-end',
+//     icon: 'success',
+//     title: 'Saved to your wishlist',
+//     showConfirmButton: false,
+//     timer: 1500
+
+// });
+
+// history.push('/login');
+
     history.push('/wishlist');
 
 }
 // const backHome = () =>{
-//     history.push('/homepage');
+    // history.push('/homepage');
 // }
 const backHome = ()=>{
     history.push('/homepage')

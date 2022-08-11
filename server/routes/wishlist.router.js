@@ -25,24 +25,8 @@ router.get('/', (req, res) => {
         })
 })
 
-
-// router.get('/', (req, res) => {
-
-//     const queryText = `SELECT * FROM wishlist `;
-//     pool.query(queryText)
-//     .then( (result) => {
-//         res.send(result.rows);
-//     })
-//     .catch(err => {
-//         console.log('ERROR: Get all wishlist', err);
-//         res.sendStatus(500)
-//     })
-// })
-
-
-
-// ---post request---
-
+// ---POST---
+// post to db
 router.post('/', (req, res) => {
     console.log('POST request');
     let sqlQuery = `INSERT INTO wishlist (user_id, product_id) VALUES ($1, $2)`;
@@ -58,8 +42,8 @@ router.post('/', (req, res) => {
         res.sendStatus(500);
     });
 });
-
-// delete from db 
+// ---DELETE---
+// delete from wishlist and db 
 router.delete("/:id", (req, res)=>{
 const id = req.params.id;
 console.log('delete from db', id);
