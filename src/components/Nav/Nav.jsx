@@ -45,13 +45,17 @@ function Nav() {
             <Link className="navLink" to="/wishlist">
             <FavoriteIcon />
             </Link>
+
+            {user.id === 1 &&(
+
             <Link className="navLink" to="/admin">
               Admin Page
             </Link>
+)}
             <Link className="navLink" to="/info">
               Info Page
             </Link>
-           
+            
             <Link className="navLink" to="/user">
               profile page
             </Link>
