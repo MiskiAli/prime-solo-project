@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import ProductDetailsItem from '../ProductDetailsItem/ProductDetailsItem';
 
+
 // styling imports
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import AddIcon from '@mui/icons-material/Add';
@@ -72,14 +73,14 @@ return(
 
 
 <h2 className="product-name">{productDetails.product_name}</h2>
-<div className="product-card">
-                <img className="product-image" src={productDetails.image} />
-            </div>
-            <p className="product-description">{productDetails.product_discription}</p>
-            <h3 className="product-price">${productDetails.price}</h3>
+<div>
+    <img className="product-image" src={productDetails.image} />
+        </div>
+    <p className="product-description">{productDetails.product_discription}</p>
+        <h2 className="product-price">${productDetails.price}</h2>
             </section>
-            <button onClick={backHome}className="back-to-home"> <ArrowBackIosNewIcon/> Continue Shopping</button>
-            <button onClick={addToWishlist} className="add-to-wishlist" > <AddIcon/> add to wishlist</button>
+            <button onClick={backHome}className="back-to-home">Continue Shopping</button>
+            <button onClick={addToWishlist} className="add-to-wishlist" >Add to Wishlist</button>
 </>
 )
 

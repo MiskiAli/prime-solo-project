@@ -15,16 +15,44 @@ color: #443a6b;
 
 .product-image{
     display: flex;
-    /* border-radius: 10px; */
     width: 300px;
     height: 400px;
 };
 
-.product-description{
+h3 {
+    color: #443a6b;
     display: flex;
+    font-size: 24px;
+
 }
 
+.back-to-home{
+    width: 150px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 2px solid #443a6b;
+} 
 
+.add-to-wishlist{
+    width: 150px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 2px solid #443a6b ;
+}
 
 /* h2 {
     text-decoration: none;
