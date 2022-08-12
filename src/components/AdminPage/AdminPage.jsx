@@ -5,11 +5,14 @@ import AddNewItem from '../AddNewItem/AddNewItem';
 import AdminProductlist from '../AdminProductList/AdminProductList';
 
 
-function AdminPage(){
 
+function AdminPage(){
+const user = useSelector((store)=> store.user);
 const wishlist = useSelector((store)=> store.wishlistReducer); 
 const products = useSelector((store)=> store.productReducer)// fix this!!
 const dispatch = useDispatch();
+
+console.log('admin page `products`', products)
 
 useEffect(()=> {
     dispatch({
@@ -27,7 +30,10 @@ useEffect(()=> {
     <>
     <h1>Admin</h1>
 {/* <AddNewItem /> */}
+{user.admin && user.id ===1 && 
+
 <AdminProductlist />
+}
     </>
     )
 }

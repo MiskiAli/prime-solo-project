@@ -27,6 +27,7 @@ const handleSubmit= (event)=>{
         type: 'EDIT_PRODUCT',
         payload: editProduct,
     });
+    
     history.push('/admin')
 }
 
@@ -60,7 +61,7 @@ payload:{product_discription: event.target.value},
 })}
 />
 
-<button onClick={handleSubmit}>finsh edit</button>
+<button onClick={handleSubmit}>finish edit</button>
         </div>
     )
 };

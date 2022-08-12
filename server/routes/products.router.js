@@ -1,7 +1,7 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 // ---GET---
 // shows everything from db to homepage
 router.get('/', (req, res) => {
@@ -42,9 +42,15 @@ router.get('/details/:id', (req, res) => {
 
 })
 
+
 // ---Delete---
-// Delete products from homepage and  database on the admin side
-router.delete("/:id", (req, res)=>{
+// Delete products from homepage and database on the admin side
+// need authentication for access.
+router.delete("/:id", rejectUnauthenticated, (req, res)=>{
+    if (!req.user.admin){
+        res.sendStatus();
+        return;
+    }
     const id = req.params.id;
     console.log('delete from db', id);
     let sqlQuery = `
@@ -63,8 +69,10 @@ router.delete("/:id", (req, res)=>{
     });
     })
 
+
 // ---PUT---
-// edit product in admin view, changes should show on the Homepage.
+// edit product in admin view, changes should show everywhere.
+// need authentication for access.
 router.put('/:id', (req, res)=>{
     const sqlText = `UPDATE product SET product_name = $1, 
     product_discription = $2, price = $3 WHERE id = $4;`;

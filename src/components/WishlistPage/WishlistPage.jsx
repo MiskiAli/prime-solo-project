@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from "react-router-dom";
 import WishlistItem from '../WishlistItem/WishlistItem';
+import ImageList from '@mui/material/ImageList';
 
 
 function WishlistPage(){
@@ -30,13 +31,16 @@ function WishlistPage(){
 
     return(
         <div>
-            <h1>wishlist page!!</h1>
+            <h1>wishlist</h1>
+            
 
 <section>
 <div>
+    <ImageList sx={{ width: 1200, height: 650 }} variant="woven" cols={2} gap={80}>
             {wishlist.map((wishlistItems)=>{
                 return <WishlistItem key={wishlistItems.id} wishlistItems={wishlistItems} />
             })}
+            </ImageList>
             </div>
 </section>
             <Link to="/homepage">
