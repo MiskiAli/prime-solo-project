@@ -1,3 +1,8 @@
+/* div{git 
+    background-color: rgb(255, 250, 244);
+} */
+
+
 .product-name{
 color: #443a6b;  
 
@@ -14,9 +19,10 @@ color: #443a6b;
 }
 
 .product-image{
+    
     display: flex;
     width: 300px;
-    height: 400px;
+    height: 375px;
 };
 
 h3 {

@@ -67,7 +67,7 @@ const backHome = ()=>{
 }
 
 return(
-<>
+<div>
 <p>Please login to save to your wishlist</p>
 
 <section>
@@ -82,7 +82,7 @@ return(
             </section>
             <button onClick={backHome}className="back-to-home">Continue Shopping</button>
             <button onClick={addToWishlist} className="add-to-wishlist" >Add to Wishlist</button>
-</>
+</div>
 )
 
 }
