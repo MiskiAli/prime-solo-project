@@ -4,6 +4,9 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import productSaga from './product.saga';
 import productDetailSaga from './productDetails.saga.js';
+import wishlistSaga from './wishlistsaga.js';
+import adminSaga from './admin.saga';
+import editProductSaga from './editProduct.saga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -18,6 +21,8 @@ export default function* rootSaga() {
     userSaga(),
     productSaga(),
     productDetailSaga(),
-
+    wishlistSaga(),
+    adminSaga(),
+    editProductSaga(),
   ]);
 }

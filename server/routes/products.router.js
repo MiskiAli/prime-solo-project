@@ -1,8 +1,9 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-
-// ---router get---
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+// ---GET---
+// shows everything from db to homepage
 router.get('/', (req, res) => {
 
     const queryText = `SELECT * FROM "product"`;
@@ -17,13 +18,14 @@ router.get('/', (req, res) => {
 
 });
 
-// ---get details---
-// set up router 
-router.get('/:id', (req, res) => {
+
+// ---GET details---
+// shows specified product in details page
+router.get('/details/:id', (req, res) => {
     console.log('geting the specified product i clicked on');
     const queryText = `SELECT * FROM product WHERE product.id = $1;`;
     const sqlParams = [req.params.id];
-
+    console.log('router working?',req.params.id);
     pool.query(queryText, sqlParams)
     .then((result) => {
         console.log('result: ', result.rows[0]);
@@ -38,6 +40,71 @@ router.get('/:id', (req, res) => {
         console,log('get clicked on products failed', error)
     })
 
+})
+
+
+// ---Delete---
+// Delete products from homepage and database on the admin side
+// need authentication for access.
+router.delete("/:id", rejectUnauthenticated, (req, res)=>{
+    if (!req.user.admin){
+        res.sendStatus();
+        return;
+    }
+    const id = req.params.id;
+    console.log('delete from db', id);
+    let sqlQuery = `
+    DELETE FROM "product"
+    WHERE "id" = $1;
+    `;
+    const sqlParams=[id];
+    pool
+    .query(sqlQuery, sqlParams)
+    .then((res)=>{
+        res.sendStatus(200);
+    })
+    .catch((error)=>{
+        console.log('error in product router DELETE', error);
+        res.sendStatus(500);
+    });
+    })
+
+
+// ---PUT---
+// edit product in admin view, changes should show everywhere.
+// need authentication for access.
+router.put('/:id', (req, res)=>{
+    const sqlText = `UPDATE product SET product_name = $1, 
+    product_discription = $2, price = $3 WHERE id = $4;`;
+    console.log('req.body and req.params:', req.body, req.params);
+    pool.
+    query(sqlText, [req.body.product_name, req.body.product_discription, req.body.price, req.params.id])
+    .then((result)=>{
+        console.log('PUT works!!', result);
+        res.sendStatus(201)
+    })
+    .catch((error)=>{
+        console.log('PUT is not working FAIL!', error);
+    })
+})
+
+
+// ---POST----
+// should post new product in the admin view and show on the homepage .. not might use
+router.post('/', (req, res)=>{
+    console.log('POST in product.router (ADD_PRODUCT data)', req.body);
+    const newProduct = [req.body.product_name, req.body.product_discription, req.body.price, req.body.image, req.body.categories_id];
+    const sqlText = `INSERT INTO product 
+    (product_name, product_discription, price, image, categories_id) 
+    VALUES ($1, $2, $3, $4, $5);`;
+    pool.
+    query(newProduct, sqlText)
+    .then((result)=>{
+        console.log('product router post for ADD_PRODUCT is working!', result);
+    })
+    .catch((error)=>{
+        console.log('post in product router is not working FAILED', error);
+    })
 })
 
 

@@ -1,0 +1,66 @@
+/* div{git 
+    background-color: rgb(255, 250, 244);
+} */
+
+
+.product-name{
+color: #443a6b;  
+
+
+}
+.product-card:hover {
+    /* background:#ece6ff; */
+    background-image: linear-gradient(144deg, #e9d0fa, #c8c0f8 50% ,#e9feff);
+    cursor: pointer;
+}
+
+.product-price{
+    color: #443a6b;
+}
+
+.product-image{
+    
+    display: flex;
+    width: 300px;
+    height: 375px;
+};
+
+h3 {
+    color: #443a6b;
+    display: flex;
+    font-size: 24px;
+
+}
+
+.back-to-home{
+    width: 150px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 2px solid #443a6b;
+} 
+
+.add-to-wishlist{
+    width: 150px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 2px solid #443a6b ;
+}
+
+/* h2 {
+    text-decoration: none;
+    color: red;
+} */

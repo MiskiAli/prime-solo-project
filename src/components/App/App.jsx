@@ -25,6 +25,7 @@ import HomePage from '../HomePage/HomePage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import AdminPage from '../AdminPage/AdminPage';
 import ProductDetails from '../ProductDetails/ProductDetails';
+import EditProduct from '../EditProduct/EditProduct';
 
 function App() {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function App() {
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          <Redirect exact from="/" to="/home" />
+          <Redirect exact from="/" to="/homepage" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
@@ -52,10 +53,17 @@ function App() {
             <HomePage />
           </Route>
 
+        <Route
+        exact
+        path="/edit"
+        >
+          <EditProduct />
+        </Route>
+
           <Route
             // shows details at all times (logged in or not)
             exact
-            path="/details"
+            path="/details/:id"
           >
             <ProductDetails />
           </Route>
@@ -96,14 +104,7 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/admin"
-          >
-            <AdminPage />
-          </ProtectedRoute>
-
+        
           <Route
             exact
             path="/login"
@@ -111,7 +112,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect to the /user page
-              <Redirect to="/user" />
+              <Redirect to="/homepage" />
               :
               // Otherwise, show the login page
               <LoginPage />
@@ -125,12 +126,22 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
-              <Redirect to="/user" />
+              <Redirect to="/homepage" />
               :
               // Otherwise, show the registration page
               <RegisterPage />
             }
           </Route>
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/admin"
+          >
+          
+            <AdminPage />
+          
+            
+            </ProtectedRoute>
 
           <Route
             exact
