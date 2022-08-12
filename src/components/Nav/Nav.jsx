@@ -52,10 +52,10 @@ function Nav() {
               Admin Page
             </Link>
 )}
-            <Link className="navLink" to="/info">
+            {/* <Link className="navLink" to="/info">
               Info Page
-            </Link>
-            
+            </Link> */}
+
             <Link className="navLink" to="/user">
               profile page
             </Link>
