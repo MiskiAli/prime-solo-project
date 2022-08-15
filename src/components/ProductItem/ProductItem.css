@@ -3,11 +3,20 @@
 } */
 
 
+
 .product-name{
 color: #443a6b;  
-
+font-family: 'Calibri';
+/* font-size: 32px; */
 
 }
+section{
+    /* background:#ece6ff; */
+    cursor: pointer;
+    font-family: 'Calibri';
+    /* padding: 25px; */
+}
+
 .product-card:hover {
     /* background:#ece6ff; */
     background-image: linear-gradient(144deg, #e9d0fa, #c8c0f8 50% ,#e9feff);
@@ -16,10 +25,12 @@ color: #443a6b;
 
 .product-price{
     color: #443a6b;
+    font-family: 'Calibri';
+
 }
 
 .product-image{
-    
+
     display: flex;
     width: 300px;
     height: 375px;
@@ -29,6 +40,7 @@ h3 {
     color: #443a6b;
     display: flex;
     font-size: 24px;
+    font-family: 'Calibri';
 
 }
 
@@ -43,7 +55,8 @@ h3 {
     position: relative;
     cursor: pointer;
     background-color:#f1eeff;
-    border: 2px solid #443a6b;
+    border: 3px solid #443a6b;
+    font-family: 'Calibri';
 } 
 
 .add-to-wishlist{
@@ -57,9 +70,20 @@ h3 {
     position: relative;
     cursor: pointer;
     background-color:#f1eeff;
-    border: 2px solid #443a6b ;
+    border: 3px solid #443a6b ;
+    font-family: 'Calibri';
 }
 
+.disclaimer{
+    font-size: 12px;
+    font-family: 'Calibri';
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Calibri';
+    /* padding: 25px; */
+}
 /* h2 {
     text-decoration: none;
     color: red;

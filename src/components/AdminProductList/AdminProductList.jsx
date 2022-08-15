@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import AdminProductItem from "../AdminProductItem/AdminProductItem";
 import ImageList from '@mui/material/ImageList';
 
+
 // this should render products on to the admin page (just like homepage)
 function AdminProductlist(){
 const dispatch = useDispatch();

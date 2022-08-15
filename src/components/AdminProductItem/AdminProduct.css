@@ -1,0 +1,34 @@
+section{
+    padding: 15px;
+}
+
+
+.delete-inventory{
+    width: 90px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 3px solid #443a6b ;
+    font-family: 'Calibri';
+}
+
+.edit-inventory{
+    width: 90px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 3px solid #443a6b ;
+    font-family: 'Calibri';
+};

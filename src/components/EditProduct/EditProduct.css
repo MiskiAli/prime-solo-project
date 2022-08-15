@@ -1,0 +1,17 @@
+.finish-edit{
+    width: 150px;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    background-color:#f1eeff;
+    border: 3px solid #443a6b;
+}
+
+h2{
+    font-family:'Calibri';
+}

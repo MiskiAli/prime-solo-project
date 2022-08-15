@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from "react-router-dom";
 import WishlistItem from '../WishlistItem/WishlistItem';
 import ImageList from '@mui/material/ImageList';
+import './WishlistPage.css';
 
 
 function WishlistPage(){
@@ -36,7 +37,7 @@ function WishlistPage(){
 
 <section>
 <div>
-    <ImageList sx={{ width: 1200, height: 650 }} variant="woven" cols={2} gap={80}>
+    <ImageList sx={{ width: 1200, height: 650 }} variant="woven" cols={1} gap={70}>
             {wishlist.map((wishlistItems)=>{
                 return <WishlistItem key={wishlistItems.id} wishlistItems={wishlistItems} />
             })}
@@ -44,7 +45,7 @@ function WishlistPage(){
             </div>
 </section>
             <Link to="/homepage">
-            <button>keep Shopping</button> 
+            <button className="keep-shopping">keep Shopping</button> 
             </Link>
         </div>
     )

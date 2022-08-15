@@ -24,7 +24,7 @@ useEffect(()=> {
 <main>
 
 <section className="productBox"> 
-<ImageList sx={{ width: 1300, height: 750 }} variant="woven" cols={4} gap={80}>
+<ImageList sx={{ width: 1250, height: 600 }} variant="woven" cols={4} gap={70}>
         {products.map(product => {
             return <ProductItem product={product} key={product.id} />
                 })}

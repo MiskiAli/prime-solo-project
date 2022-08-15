@@ -7,6 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  /* padding: 20px; */
 }
 
 img {
@@ -27,7 +28,7 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
-  display: inline-block;
+  /* display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
   border-width: 1px 1px 3px;
@@ -36,7 +37,19 @@ Button
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
+  cursor: pointer; */
+  width: 150px;
+  height:30px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
   cursor: pointer;
+  background-color:#f1eeff;
+  border: 3px solid #443a6b;
+  font-family: 'Calibri'
 }
 
 .btn_sizeMin {
@@ -55,7 +68,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #9e8edb;
   text-decoration: none;
 }
 
@@ -74,6 +87,7 @@ Button
   background-color: transparent;
   border-color: #008183;
   color: #008183;
+  
 }
 
 /* --------------------------------------------------------------------------------
@@ -101,7 +115,7 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: #ffe3e8;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }

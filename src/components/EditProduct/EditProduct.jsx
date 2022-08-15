@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './EditProduct.css';
+
 
 function EditProduct(){
 const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const handleSubmit= (event)=>{
         type: 'EDIT_PRODUCT',
         payload: editProduct,
     });
-    
+
     history.push('/admin')
 }
 
@@ -61,7 +63,7 @@ payload:{product_discription: event.target.value},
 })}
 />
 
-<button onClick={handleSubmit}>finish edit</button>
+<button className="finish-edit" onClick={handleSubmit}>finish edit</button>
         </div>
     )
 };

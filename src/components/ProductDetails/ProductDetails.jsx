@@ -68,7 +68,7 @@ const backHome = ()=>{
 
 return(
 <div>
-<p>Please login to save to your wishlist</p>
+<p className="disclaimer">Please login to save to your wishlist</p>
 
 <section>
 

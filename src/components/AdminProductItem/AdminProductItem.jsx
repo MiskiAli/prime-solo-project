@@ -4,7 +4,7 @@ import { useDispatch,} from "react-redux";
 import { useHistory } from "react-router-dom";
 import Swal from 'sweetalert2'
 import {  useSelector } from 'react-redux';
-
+import './AdminProduct.css';
 
 
 function AdminProductItem({product}){
@@ -63,12 +63,13 @@ const editInventory= () =>{
             <h2 className="product-name">{product.product_name}</h2>
             <div className="product-price">${product.price}</div>
             <span className="product-btns">
-                <button onClick={deleteInventory} className="delete-inventory">Delete This Item</button>
+                <button onClick={deleteInventory} className="delete-inventory">Delete Item</button>
+                
                 <button value={product}
                 onClick={editInventory} 
-                className="edit-inventory">Edit This Item</button>
-                
-            </span>
+                className="edit-inventory">Edit Item</button>
+                </span>
+            
         </section>
 }
 </div>

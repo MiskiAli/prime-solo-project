@@ -6,6 +6,7 @@ import AdminProductlist from '../AdminProductList/AdminProductList';
 
 
 
+
 function AdminPage(){
 const user = useSelector((store)=> store.user);
 const wishlist = useSelector((store)=> store.wishlistReducer); 
@@ -29,10 +30,11 @@ useEffect(()=> {
     return(
     <>
     <h1>Admin</h1>
-{/* <AddNewItem /> */}
-{user.admin && user.id ===1 && 
 
+{user.admin && user.id ===1 && 
+<div>
 <AdminProductlist />
+</div>
 }
     </>
     )
