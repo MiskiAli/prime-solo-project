@@ -27,9 +27,10 @@ dispatch({
             <h2 className="wishlistItem-name">{wishlistItems.product_name}</h2>
             <div className="wishlistItem-price">${wishlistItems.price}</div>
             <span className="wishlistItem-btns">
-                {/* <Link to={"https://buy.stripe.com/3cs4jd4w53ik28E144"}>
-                <button className="checkout-btn">Proceed to Checkout</button>
-                </Link> */}
+                {/* <Link  to={"https://buy.stripe.com/3cs4jd4w53ik28E144"}> */}
+                {/* <a href={"https://stripe.com/3cs4jd4w53ik28E144"}  className="link" target="_blank"> </a> */}
+                {/* <button className="checkout-btn"> <a href="https://stripe.com/3cs4jd4w53ik28E144"> </a> Proceed to Checkout</button> */}
+                
                 <button onClick={handleDelete}className="remove-wishlistItem">remove This Item</button>
             </span>
         </section>
