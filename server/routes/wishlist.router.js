@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 
-// admin get (save for later use)
+// ---Wishlist GET--- (save for later use)
 router.get('/', (req, res) => {
     console.log('/wishlist GET route');
     // Sql query, join tables and select columns do display
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 })
 
 // ---POST---
-// post to db
+// post wishlist item to db
 router.post('/', (req, res) => {
     console.log('POST request');
     let sqlQuery = `INSERT INTO wishlist (user_id, product_id) VALUES ($1, $2)`;

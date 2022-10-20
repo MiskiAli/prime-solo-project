@@ -30,10 +30,10 @@ function Nav() {
         <Link className="navLink" to="/homepage">
             <HomeIcon />
             </Link>
-       
+
 
         {/* If a user is logged in, show these links */}
-       
+
         {/* {!user.admin && user.id === 1 && (
             <Link className="navLink" to="/admin">
               Admin Page

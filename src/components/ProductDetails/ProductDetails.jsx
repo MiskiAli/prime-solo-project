@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useParams } from 'react-router-dom';
-import ProductDetailsItem from '../ProductDetailsItem/ProductDetailsItem';
-
 
 // styling imports
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -26,7 +24,7 @@ useEffect(()=>{
         payload: (params.id),
 
     })
-    // dispatch({type:"FETCH_WISHLIST_ITEMS"})
+
 },[params.id])
 
 
@@ -45,23 +43,12 @@ dispatch({
     },
 
     });
-//     Swal.fire({
-//     position: 'top-end',
-//     icon: 'success',
-//     title: 'Saved to your wishlist',
-//     showConfirmButton: false,
-//     timer: 1500
 
-// });
-
-// history.push('/login');
 
     history.push('/wishlist');
 
 }
-// const backHome = () =>{
-    // history.push('/homepage');
-// }
+
 const backHome = ()=>{
     history.push('/homepage')
 }

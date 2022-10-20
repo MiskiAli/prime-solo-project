@@ -18,22 +18,7 @@ function* fetchProduct() {
     }
 };
 
-// deletes the product info from the admin and client side hopefully
-// function deleteProduct(action){
-//     console.log('Delete product is admin saga', action);
-//     try{
-        
-//         yield axios.delete(`/api/product/${action.payload}`);
-//         console.log('Delete product', action.payload);
-    
-//         yield put({ type: 'SET_PRODUCT', payload: res.data }); 
-//         // type is from product reducer
-//     }
-//         catch (error) {
-//             console.log('Error deleting product', error);
-//         }
-//     };
-
+// ---DELETE---
     function* deleteProduct(action){
         const id = action.payload;
         try{

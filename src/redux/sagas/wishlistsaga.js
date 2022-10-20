@@ -3,13 +3,12 @@ import { post, put, takeLatest } from 'redux-saga/effects';
 
 // Saga will listen for 'ADD_WISHLIST_ITEMS' dispatch 
 function* fetchWishList() {
-    // const id = action.payload;
 	try {
-		//? Request the details from the server by ID
+		//Request the details from the server by ID
 		const response = yield axios.get(`/api/wishlist`);
 
 		console.log('res OF RETURN', response.data);
-		//? After details come back send them to the reducer to update state
+		//After details come back send them to the reducer to update state
 		yield put({ 
             type: 'SET_WISHLIST', 
             payload: response.data });

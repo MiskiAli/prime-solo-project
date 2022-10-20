@@ -6,17 +6,13 @@ import './WishlistItem.css';
 function WishlistItem({wishlistItems}){
     const dispatch= useDispatch();
 
-
-
+// ---DELETE---
 const handleDelete=()=>{
 dispatch({
     type:"DELETE_WISHLIST", 
     payload: wishlistItems.id,
 })
 }
-
-
-
     return(
         <div>
         

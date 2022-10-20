@@ -9,7 +9,7 @@ import './WishlistPage.css';
 function WishlistPage(){
     const history= useHistory();
     const dispatch = useDispatch();
-    // const params = useParams();
+
     const wishlist = useSelector((store)=> store.wishlistReducer); //add this reducer and saga!
     console.log('what is in the wishlist reducer', wishlist);
 
@@ -19,22 +19,9 @@ function WishlistPage(){
     })
     }, []);
 
-    // useEffect(()=> {
-    //     dispatch({
-    //         type:'ADD_WISHLIST_ITEMS',
-    //         payload: params.id
-
-    //     })
-    //     console.log('whats wRONG>>>>>', wishlist);
-    // },
-    // []);
-
-
     return(
         <div>
             <h1>wishlist</h1>
-            
-
 <section>
 <div>
     <ImageList sx={{ width: 1200, height: 650 }} variant="woven" cols={1} gap={70}>

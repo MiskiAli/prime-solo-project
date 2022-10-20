@@ -16,7 +16,6 @@ function* fetchProduct(){
 };
 
 // ---POST---
-// 
 function* addProduct(action){
     console.log('In add product to saga');
     try{

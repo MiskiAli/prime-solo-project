@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+
 // ---GET---
 // shows everything from db to homepage
 router.get('/', (req, res) => {
@@ -43,9 +44,9 @@ router.get('/details/:id', (req, res) => {
 })
 
 
-// ---Delete---
+// ---DELETE---
 // Delete products from homepage and database on the admin side
-// need authentication for access.
+// needs authentication for access.
 router.delete("/:id", rejectUnauthenticated, (req, res)=>{
     if (!req.user.admin){
         res.sendStatus();
@@ -90,7 +91,7 @@ router.put('/:id', (req, res)=>{
 
 
 // ---POST----
-// should post new product in the admin view and show on the homepage .. not might use
+// should post new product in the admin view and show on the homepage .. (not might use)
 router.post('/', (req, res)=>{
     console.log('POST in product.router (ADD_PRODUCT data)', req.body);
     const newProduct = [req.body.product_name, req.body.product_discription, req.body.price, req.body.image, req.body.categories_id];

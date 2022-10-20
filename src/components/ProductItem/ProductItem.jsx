@@ -5,21 +5,9 @@ import './ProductItem.css';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 
-
-
 function ProductItem({product}){
     const history = useHistory();
     const dispatch = useDispatch();
-
-    // const viewDetail = (id) =>{
-    //     dispatch({
-    //         type: 'FETCH_PRODUCT_DEETS',
-    //         payload: details,
-    //     })
-
-    //     history.push(`/details/`)
-    // }
-
 
     return(
         <div >
